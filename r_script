@@ -1,0 +1,9 @@
+#Reads data into temp file from zipped url download
+#Reads specified file
+
+
+download.file("http://download.cms.gov/nppes/NPPES_Data_Dissemination_January_2017.zip",temp, mode="wb")
+unzip(temp, "npidata_20050523-20170108.csv")
+dd <- read.table("npidata_20050523-20170108.csv", sep=",",skip=2, header=T)
+
+read.csv(dd)
